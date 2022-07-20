@@ -1,0 +1,14 @@
+h1{
+    color: #9a39ea;
+    font-size: 35pt;
+    font-style: italic;
+    font-family: "Setofont";
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+h2{
+    color: #4d2170;
+    font-size: 20pt;
+    font-style: inherit;
+}
