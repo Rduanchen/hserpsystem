@@ -1,14 +1,53 @@
-h1{
-    color: #9a39ea;
-    font-size: 35pt;
-    font-style: italic;
-    font-family: "Setofont";
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
+.holl{
+    background-color:  #caf0f8ff;
 }
-h2{
-    color: #4d2170;
-    font-size: 20pt;
-    font-style: inherit;
+#Title_Area{
+    width: auto;
+    height:auto ;
+    margin: 10px;
+    padding: 10px;
+    background-color: #0077b6ff;
+    border-radius: 20px;
+}
+#Title_word{
+    margin: auto;
+    color: #03045eff;;
+    font-family:"SetoFont";
+    font-size: 5em;
+}
+#Notification_title{
+    margin: 5px;
+    background-color: midnight-blue;
+    border: solid;
+    font-size: 30px;
+    border-radius: 10px;
+}
+#Notification_containt{
+    background-color:rgba(79, 79, 221, 0.999);
+    border: solid;
+    height: 250px;
+}
+#Function_Bar{
+    height: auto;
+    font-weight: auto;
+    margin: 5px;
+    padding: 5px;
+    border: solid;
+    border-radius: 10px;
+    background-color:#90e0efff;
+}
+#Sub_function_bar{
+    width: auto;
+    height: auto;
+    border: solid;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #90e0efff;
+}
+#Card_of_homepage{
+    background-color: #90e0efff !important;
+}
+#index_block{
+    
 }
