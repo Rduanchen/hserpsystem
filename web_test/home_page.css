@@ -1,0 +1,109 @@
+body{
+  margin: 0;
+}
+a {
+    text-decoration: none;
+    display: flex;
+  }
+.header{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color:white;
+}
+  .header-nav {
+    width: 100%;
+    align-items: center;
+  }
+  .header-div {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    width: 1110px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+  .header-left-div {
+    display: flex;
+    width: 450px;
+    align-items: center;
+  }
+  .header-left-ul {
+    display: flex;
+    padding:0%;
+    margin: 0%;
+    height: 50px;
+    align-items: center;
+    list-style-type: none;
+  }
+  .about-li{
+    padding-right: 50px;
+  }
+  .about-a{
+    color: black;
+  }
+  .video-li{
+    padding-right: 50px;
+  }
+  .video-a{
+    color: black;
+  }
+  .articles-li{
+    padding-right: 50px;
+  }
+  .articles-a{
+    color: black;
+  }
+  .other-li{
+    padding-right: 50px;
+  }
+  .other-a{
+    color: black;
+  }
+  .logo {
+    width: 210px;
+    align-items: center;
+    display: inline-block;
+  }
+  
+  
+  .YT-IG-FB-link-ul{
+    list-style-type: none;
+    display: flex;
+    padding: 0%;
+    margin: 0%;
+    margin-left: 215px;
+  }
+  
+  .YT-logo{
+    width: 35px;
+    height: 35px;
+  }
+ .YT-link-li{
+   padding-right: 50px;
+ }
+
+  .IG-logo{
+    width: 35px;
+    height: 35px;
+  }
+  .IG-link-li{
+    padding-right: 50px;
+  }
+  .FB-logo{
+    width: 35px;
+    height: 35px;
+  }
+  .test-div{
+    width:100%;
+  }
+  .test{
+    width:100%;
+  }
+  .about-in-page-div{
+    background-color:#d8d5cf;
+    width: 100%;
+    height: 500px;
+  }
