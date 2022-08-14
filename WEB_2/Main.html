@@ -31,7 +31,7 @@
             <div class="row justify-content-center">
                 <!--set memo bar-->
                 <div class="btn-group">
-                    <button type="button" class="btn btn-info"><a class="nav-link active" href="file:///C:/Users/cheny/OneDrive/%E6%A1%8C%E9%9D%A2/G12%20Program%20Folder/WEB/Main.html#">首頁</a></button>
+                    <button type="button" class="btn btn-info"><a class="nav-link active" href="file:///C:/Users/cheny/OneDrive/桌面/G12%20Program%20Folder/WEB_2/Main.html">首頁</a></button>
                     <button type="button" class="btn btn-info"><a class="nav-link link" href="https://www.google.com/">系統介紹</a></button>
                     <button type="button" class="btn btn-info"><a class="nav-link link" href="https://getbootstrap.com/docs/5.2/getting-started/download/">使用說明</a></button>
                     <button type="button" class="btn btn-info"><a class="nav-link link" href="https://www.google.com/search?q=verticla&oq=verticla&aqs=edge..69i57j0i10i433j0i10l7.3589j0j1&sourceid=chrome&ie=UTF-8">系統教學影片</a></button>
@@ -136,13 +136,14 @@ function haha(){
     // window.open("Lend_web_lentsystem.html",'_blank')
     // // window.location.href="Lend_web_lentsystem.html"
     var test = new XMLHttpRequest();
+    test.open('GET','https://raw.githubusercontent.com/Rduanchen/hserpsystem.github.io/main/WEB_2/Lend_web_lentsystem.html');
+    test.send(null);
+
     test.onload=function(){
         if(test.status==200){
-            document.getElementById('#index_block').innerHTML=test.responseText;
-        }
+            document.getElementById('index_block').innerHTML=test.responseText;
+        };
     };
-    test.open('GET','https://google.com',true);
-    test.send(null);
 };
 
 //     $(document).ready(function(){

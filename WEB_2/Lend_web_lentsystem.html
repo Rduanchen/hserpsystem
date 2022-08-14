@@ -22,30 +22,30 @@
             <P> </P>
         </div>
     </div>
-    <form>
+    <form action="https://ap3.ragic.com/haisann/forms2/5?api=true" method="post" id="myForm">
         <div class="mb-3">
             <br>
             <br>
             <h2>借用單資料</h2>
             <hr>
 
-            <label for="Rent_form_name" class="form-label">借用人資料</label>
-            <input type="text" class="form-control" placeholder="Ex.王小明" id="Rent_form_name">
+            <label for="Rent_form_name" class="form-label">借用人姓名</label>
+            <input type="text" class="form-control" placeholder="Ex.王小明" id="Rent_form_name" name="1000138">
 
             <label for="Rent_form_unit" class="form-label">借用所屬單位</label>
-            <input type="text" class="form-control" placeholder="Ex.十二年級" id="Rent_form_unit">
+            <input type="text" class="form-control" placeholder="Ex.十二年級" id="Rent_form_unit" name="1000140">
 
             <label for="Rent_form_email" class="form-label">聯絡電郵(email)</label>
-            <input type="email" class="form-control" placeholder="Ex.sample@haisann.com" id="Rent_form_email">
+            <input type="email" class="form-control" placeholder="Ex.sample@haisann.com" id="Rent_form_email" name="1000141">
 
             <label for="Rent_form_teacher" class="form-label">負責老師</label>
-            <input type="text" class="form-control" id="Rent_form_teacher"  placeholder="Ex.王小華">
+            <input type="text" class="form-control" id="Rent_form_teacher"  placeholder="Ex.王小華" name="1000142">
 
             <label for="Rent_form_reason" class="form-label">借用事由</label>
-            <input type="text" class="form-control" placeholder="Ex.十二年級" id="Rent_form_reason">
+            <input type="text" class="form-control" placeholder="Ex.十二年級" id="Rent_form_reason" name="1000346">
 
             <label for="Rent_form_start_time" class="form-label">開始借用時間</label>
-            <input type="date" class="form-control" id="Rent_form_start_date">
+            <input type="date" class="form-control" id="Rent_form_start_date" name="f b">
             <input type="time" class="form-control" id="Rent_form_start_time">
 
             <label for="Rent_form_end_time" class="form-label">結束借用時間</label>
@@ -77,50 +77,88 @@
                 <input type="text" class="form-control" placeholder="報告使用" id="Rent_form_reason">
                 </div>
                 <div class="col-2">
-                    <button type="button" class="btn btn-primary btn-block" ">刪除</button>
+                    <button type="button" class="btn btn-primary btn-block" onclick="delete_data()">刪除</button>
                 </div>
-            </div>  
-            <br>
-            <!--add js function to keep copy following code-->
-            <!--
-            <div class="row">
-                <div class="col-2">
-                <input type="text" class="form-control"id="Rent_form_reason"  value="1234" disabled readonly>
-                </div>\
-                <div class="col-2">
-                <input type="text" class="form-control" placeholder="報告使用" id="Rent_form_reason">
-                </div>
-                <div class="col-2">
-                <input type="text" class="form-control" id="Rent_form_reason" value="1234" disabled readonly>
-                </div>
-                <div class="col-2">
-                <input type="text" class="form-control" placeholder="報告使用" id="Rent_form_reason">
-                </div>
-                <div class="col-2">
-                <input type="text" class="form-control" placeholder="報告使用" id="Rent_form_reason">
-                </div>
+                <br>
             </div>
-            -->
         </div>
 
        
     </form>
     <div class="row">
         <hr>
-        <button type="button" class="btn btn-primary btn-block" onclick="append_a_data()">新增一筆借用單</button>
+        <button type="button" class="btn btn-primary btn-block" onclick="append_a_data()">新增一筆資料</button>
     </div>
     <div class="row mb-3">
         <hr>
-        <button type="button" class="btn btn-primary btn-block">送出</button>
+        <button type="button" class="btn btn-primary btn-block" onclick="get_form_var()">送出</button>
         <br>
     </div>
 </div>
 </body>
 <script>
+    $(document).ready(function(){
+        loadragicdata();
+    });
+    // // headers:{"Authorization":"Basic cEg1bCtoV040TFBzYVA3REs1cGJBUW5mSjUwWm1kOExrRXVWenkzM3R0V0krVGE0UDlkOFpJUXlKSEdsektUUjR2ZXgxV21vSXVjPQ=="},
+    function loadragicdata(){
+        // $.ajax({
+        //     url:'https://ap3.ragic.com/haisann/forms2/1',
+        //     method:'get',
+        //     dataType:'json',
+        //     success: function(data){
+        //         console.log(data);
+        //     },
+        // })
+        url='https://ap3.ragic.com/haisann/forms2/1';
+        $.getJSON(url,function(data){
+            console.log(data);
+       })
+    };
+    var today= new Date();
+    var time=today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
     function append_a_data(){
         var $form=$('#general_form').clone();
         $form.insertAfter('#general_form');
-    }
-    
+    };
+    function delete_data(){
+        var $form=$('#general_form').remove();
+    };
+    function get_form_var(){
+        push_data={};
+        push_data['1000138']=$('#Rent_form_name').val();//借用人姓名
+        push_data['1000164']=time; //填單日期(自動設定)
+        push_data['1000140']=$('#Rent_form_unit').val();//借用單位
+        push_data['1000141']=$('#Rent_form_email').val();//電子郵件
+        push_data['1000142']=$('#Rent_form_teacher').val();// 負責老師名稱
+        push_data['1000346']=$('#Rent_form_reason').val();//借用理由
+        push_data['1000140']=$('#Rent_form_unit').val();//借用單位
+        var a=$('#Rent_form_start_date').val();
+        a=a.replace(/-/g,'/');
+        console.log(a);
+        push_data['1000135']=a+' '+$('#Rent_form_start_time').val();//借用開始時間
+        a=$('#Rent_form_end_date').val();
+
+        a=a.replace(/-/g,'/');
+        console.log(a);
+        push_data['1000136']=a+' '+$('#Rent_form_end_time').val();//結束借用時間
+        console.log(push_data);
+
+        $.ajax({
+            url:'https://ap3.ragic.com/haisann/forms2/5?api=true',
+            method:'post',
+            data:push_data,
+            dataType: 'json',
+            success: function (data) {
+               if (data['status']=='SUCCESS'){
+                    alert('成功借用');
+               };
+               if (data['status']=='INVALID'){
+                    alert('請檢查欄位值');
+               };
+            },
+        });
+
+    };
 </script>
 </html>

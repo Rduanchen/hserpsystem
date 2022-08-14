@@ -3,19 +3,34 @@
 <head>
     <title>js test</title>
     <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <a href="lend_system.html">Link</a>。
-    <div class="haha">
-        
-    </div>
+    <button onclick="hello()"><a>get data</datagrid></a></button>
 </body>
 <script>
-    var fr= new FileReader("lend_system.html");
-    // fr.readAsText("lend_system.html","utf-8");
-    // fr.onload("lend_system.html");
-    console.log(fr.result)
-    // var a=document.getElementsByClassName('haha');
-
+    
+    function hello(){
+        // $.ajax({
+        //     url:'https://ap3.ragic.com/haisann/forms2/5?api=true',
+        //     method:'get',
+        //     dataType:'json',
+        //     success: function(data){
+        //         console.log("資料取得成功");
+        //         console.log(data);
+        //     },
+        // });
+        function httpGet(theUrl)
+        {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+            xmlHttp.setRequestHeader("Authorization","Basic cEg1bCtoV040TFBzYVA3REs1cGJBUW5mSjUwWm1kOExrRXVWenkzM3R0V0krVGE0UDlkOFpJUXlKSEdsektUUjR2ZXgxV21vSXVjPQ==");
+            xmlHttp.send( null );
+            return xmlHttp.responseText;
+        }
+        var a=httpGet('https://ap3.ragic.com/haisann/forms2/5');
+        console.log(a);
+    };
 </script>
 </html>
