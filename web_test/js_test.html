@@ -10,27 +10,20 @@
     <button onclick="hello()"><a>get data</datagrid></a></button>
 </body>
 <script>
-    
     function hello(){
-        // $.ajax({
-        //     url:'https://ap3.ragic.com/haisann/forms2/5?api=true',
-        //     method:'get',
-        //     dataType:'json',
-        //     success: function(data){
-        //         console.log("資料取得成功");
-        //         console.log(data);
-        //     },
-        // });
-        function httpGet(theUrl)
-        {
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-            xmlHttp.setRequestHeader("Authorization","Basic cEg1bCtoV040TFBzYVA3REs1cGJBUW5mSjUwWm1kOExrRXVWenkzM3R0V0krVGE0UDlkOFpJUXlKSEdsektUUjR2ZXgxV21vSXVjPQ==");
-            xmlHttp.send( null );
-            return xmlHttp.responseText;
-        }
-        var a=httpGet('https://ap3.ragic.com/haisann/forms2/5');
-        console.log(a);
+        $.ajax({
+            url:'https://ap3.ragic.com/haisann/forms2/5?api=true',
+            method:'get',
+            dataType: 'json',
+            // headers:{
+            //     'Authorization':'Basic cEg1bCtoV040TFBzYVA3REs1cGJBUW5mSjUwWm1kOExrRXVWenkzM3R0V0krVGE0UDlkOFpJUXlKSEdsektUUjR2ZXgxV21vSXVjPQ=='
+            // },
+            success: function(data){
+                console.log("get data sucess");
+                console.log(data);
+            },
+        });
     };
 </script>
+<!---->
 </html>
