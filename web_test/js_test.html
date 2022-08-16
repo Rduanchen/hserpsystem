@@ -9,19 +9,10 @@
 <body>
     <div id="index_block"></div>
     <button onclick="hello()"><a>get data</datagrid></a></button>
+    
 </body>
 <script>
-function hello(){
-    var test = new XMLHttpRequest();
-    test.open('GET','https://raw.githubusercontent.com/Rduanchen/hserpsystem/main/WEB_2/sub_index_web/Serch_general.html');
-    test.send(null);
-
-    test.onload=function(){
-        if(test.status==200){
-            document.getElementById('index_block').innerHTML=test.responseText;
-            console.log(test.responseText);
-        };
-    };
-};
+var v='<iframe src="https://ap3.ragic.com/haisann/forms2/1?webview&webaction=form&ver=new&dfCheckbox" width="100%" height="600px"></iframe>';
+document.getElementById('index_block').innerHTML(v);
 </script>
 </html>
