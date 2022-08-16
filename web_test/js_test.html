@@ -10,20 +10,29 @@
     <button onclick="hello()"><a>get data</datagrid></a></button>
 </body>
 <script>
-    function hello(){
-        $.ajax({
-            url:'https://ap3.ragic.com/haisann/forms2/5?api=true',
-            method:'get',
-            dataType: 'json',
-            // headers:{
-            //     'Authorization':'Basic cEg1bCtoV040TFBzYVA3REs1cGJBUW5mSjUwWm1kOExrRXVWenkzM3R0V0krVGE0UDlkOFpJUXlKSEdsektUUjR2ZXgxV21vSXVjPQ=='
-            // },
-            success: function(data){
-                console.log("get data sucess");
-                console.log(data);
-            },
-        });
+function hello(){
+    var test = new XMLHttpRequest();
+    test.open('GET','https://ap3.ragic.com/haisann/forms2/1?api=true');
+    test.send(null);
+    var $response_text=" ";
+    var $response_json={};
+    test.onload=function(){
+        if(test.status==200){
+            console.log('sucess');
+            $response_text=test.responseText;
+            // console.log($response_text);
+            console.log('get data convert to text');
+            $response_json=JSON.parse($response_text);
+        };
+        // console.log(Object.keys($response_json));
+
+        console.log($response_json['2']);
+        for(var a in Object.keys($response_json)){
+            $response_json
+        };
     };
+    
+   
+};
 </script>
-<!---->
 </html>

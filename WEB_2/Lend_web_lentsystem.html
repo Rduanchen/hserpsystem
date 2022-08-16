@@ -158,6 +158,16 @@
                };
             },
         });
+        $.ajax({
+            url:'https://ap3.ragic.com/haisann/forms2/1?api=true',
+            method:'get',
+            dataType: 'json',
+            success: function (data) {
+               if (data['status']=='SUCCESS'){
+                    alert('成功爬取');
+               };
+            },
+        });
 
     };
 </script>

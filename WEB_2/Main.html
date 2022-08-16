@@ -41,7 +41,7 @@
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-primary" id="lend_system" onclick="get_lend_form()" >財產借用系統</button>
                     <button type="button" class="btn btn-primary" onclick="get_conflict_form()">耗材申請系統</button>
-                    <button type="button" class="btn btn-primary">財產資料查詢</button>
+                    <button type="button" class="btn btn-primary" onclick="Serch_general()">財產資料查詢</button>
                     <button type="button" class="btn btn-primary">常衝突財產借用系統</button>
                     <button type="button" class="btn btn-primary">場地借用系統</button>
                     <button type="button" class="btn btn-primary">回饋系統</button>                    
@@ -113,9 +113,10 @@
                             <a href="#" class="btn btn-primary">前往回饋系統</a>
                         </div>
                     </div>
-
                 </div>
                 </div>
+            </div>
+                      
         </div>
             <!--Set Notification Block Uncomment for use function
         <div class="row justify-content-center">
@@ -125,7 +126,7 @@
             </div>
         </div>
         -->
-        
+
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
         </div>
         
@@ -145,16 +146,19 @@ function get_lend_form(){
         };
     };
 };
-function get_conflict_form(){
+
+function Serch_general(){
     $.ajax({
-        url:'https://raw.githubusercontent.com/Rduanchen/hserpsystem/main/WEB_2/sub_index_web/conflict_General.html',
+        url:'https://raw.githubusercontent.com/Rduanchen/hserpsystem/main/WEB_2/sub_index_web/Serch_general.html',
         method:'get',
-        dataType:'html',
+        dataType:'Text',
         success:function(data){
-                console.log('success get ragic data')
-                $('#index_block').html(data);
-            },
-        });
+            console.log(typeof(data));
+            $(document).ready(function(){
+                document.getElementById('index_block').innerHTML=data;
+            })
+        },
+    });
 };
 
 </script>
