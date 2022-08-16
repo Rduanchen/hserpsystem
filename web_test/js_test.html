@@ -7,32 +7,21 @@
 
 </head>
 <body>
+    <div id="index_block"></div>
     <button onclick="hello()"><a>get data</datagrid></a></button>
 </body>
 <script>
 function hello(){
     var test = new XMLHttpRequest();
-    test.open('GET','https://ap3.ragic.com/haisann/forms2/1?api=true');
+    test.open('GET','https://raw.githubusercontent.com/Rduanchen/hserpsystem/main/WEB_2/sub_index_web/Serch_general.html');
     test.send(null);
-    var $response_text=" ";
-    var $response_json={};
+
     test.onload=function(){
         if(test.status==200){
-            console.log('sucess');
-            $response_text=test.responseText;
-            // console.log($response_text);
-            console.log('get data convert to text');
-            $response_json=JSON.parse($response_text);
-        };
-        // console.log(Object.keys($response_json));
-
-        console.log($response_json['2']);
-        for(var a in Object.keys($response_json)){
-            $response_json
+            document.getElementById('index_block').innerHTML=test.responseText;
+            console.log(test.responseText);
         };
     };
-    
-   
 };
 </script>
 </html>
